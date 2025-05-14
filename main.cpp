@@ -111,6 +111,7 @@ Color_t api_cerah = {1,1,0.7000000000000001};
 Color_t api_menyala = {1,0.8,0.2};
 Color_t merah_menyala = {1,0,0};
 
+
 // Objek pintu
 Point2D_t  ktk_pintu [4] = {{40.,0.},{180.,0.},{180.,320.},{40.,320.}};
 drawPolygon(ktk_pintu, 4, hitam, 10);
@@ -121,6 +122,7 @@ Point2D_t lingkaran_penuh[360];
 drawCircle(lngkrn_ggng_pintu[0], 10,360,1.0,lingkaran_penuh);
 drawPolygon(lingkaran_penuh,360,hitam,2.0);
 fillPolygon(lingkaran_penuh, 360,putih_tulang);
+
 
 
 //Objek obor 1
@@ -284,13 +286,15 @@ drawCircle(stglkr2_furnace[0],20,180,5,st_lkr);
 drawPolygon(st_lkr,180,hitam,5);
 fillPolygon(st_lkr,180,merah_menyala);
 }
+
+//fungsi untuk menampilkan
 void display() {
     glClear(GL_COLOR_BUFFER_BIT);
     userdraw();
     glutSwapBuffers();
 }
 
-// === Main Function ===
+//Fungsi Utama
 int main(int argc, char **argv) {
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
