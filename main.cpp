@@ -97,6 +97,9 @@ void drawEllipse(Point2D_t pusat, float jariH, float jariV, int sudut, float siz
 void userdraw()
 {
 //isinya pallet warna
+Color_t abu_muda = {0.5,0.5,0.5};
+Color_t abu_tua = {0.30000000000000004,0.30000000000000004,0.30000000000000004};
+Color_t oranye_menyala = {1,0.1,0};
 Color_t putih = {0.9,0.9,0.9};
 Color_t biru_muda = {0.30000000000000004,0.6000000000000001,0.8};
 Color_t putih_tulang = {0.9,0.9,0.8};
@@ -108,34 +111,34 @@ Color_t api_cerah = {1,1,0.7000000000000001};
 Color_t api_menyala = {1,0.8,0.2};
 Color_t merah_menyala = {1,0,0};
 
-// pintu
+// Objek pintu
 Point2D_t  ktk_pintu [4] = {{40.,0.},{180.,0.},{180.,320.},{40.,320.}};
 drawPolygon(ktk_pintu, 4, hitam, 10);
 fillPolygon(ktk_pintu, 4, coklat_cerah);
 
-//gaggang pintu
 Point2D_t  lngkrn_ggng_pintu [1] = {{150.,140.}};
 Point2D_t lingkaran_penuh[360];
 drawCircle(lngkrn_ggng_pintu[0], 10,360,1.0,lingkaran_penuh);
 drawPolygon(lingkaran_penuh,360,hitam,2.0);
 fillPolygon(lingkaran_penuh, 360,putih_tulang);
 
-//ganggang obor
+
+//Objek obor 1
 Point2D_t  ktk_ggng_obor1 [4] = {{240.,220.},{260.,220.},{260.,280.},{240.,280.}};
 drawPolygon(ktk_ggng_obor1,4,hitam,10);
 fillPolygon(ktk_ggng_obor1,4,coklat_gelap_bgt);
 
-//kotak api cerah obor 1
 Point2D_t  ktk_api1_obor1 [4] = {{240.,280.},{260.,280.},{260.,292.},{240.,292.}};
 drawPolygon(ktk_api1_obor1,4,hitam,10);
 fillPolygon(ktk_api1_obor1,4,api_cerah);
 
-//kotak api menyala obor 1
 Point2D_t  ktk_api2_obor1 [4] = {{240.,292.},{260.,292.},{260.,300.},{240.,300.}};
 drawPolygon(ktk_api2_obor1,4,hitam,10);
 fillPolygon(ktk_api2_obor1,4,api_menyala);
 
-//kotak api ganggang obor 2
+
+
+//Objek obor 2
 Point2D_t  ktk_ggng_obor2 [4] = {{300.,220.},{320.,220.},{320.,280.},{300.,280.}};
 drawPolygon(ktk_ggng_obor2,4,hitam,10);
 fillPolygon(ktk_ggng_obor2,4,coklat_gelap_bgt);
@@ -148,6 +151,9 @@ Point2D_t  ktk_api2_obor2 [4] = {{300.,292.},{320.,292.},{320.,300.},{300.,300.}
 drawPolygon(ktk_api2_obor2,4,hitam,10);
 fillPolygon(ktk_api2_obor2,4,api_menyala);
 
+
+
+//Objek Crafting Table
 Point2D_t  ktk_crfting_tble [4] = {{240.,0.},{340.,0.},{340.,100.},{240.,100.}};
 drawPolygon(ktk_crfting_tble,4,hitam,10);
 fillPolygon(ktk_crfting_tble,4,coklat_cerah);
@@ -179,6 +185,9 @@ Point2D_t  sgt_gergaji [3] = {{310.,60.},{330.,60.},{330.,20.}};
 drawPolygon(sgt_gergaji,3,hitam,5);
 fillPolygon(sgt_gergaji,3,putih_tulang);
 
+
+
+//Objek Chest 1
 Point2D_t  ktk_bwh_chest [4] = {{500.,0.},{660.,0.},{660.,40.},{500.,40.}};
 drawPolygon(ktk_bwh_chest,4,hitam,10);
 fillPolygon(ktk_bwh_chest,4,coklat_cerah);
@@ -191,6 +200,9 @@ Point2D_t  ktk_kunci_chest [4] = {{570.,22.},{586.,22.},{586.,60.},{570.,60.}};
 drawPolygon(ktk_kunci_chest,4,hitam,10);
 fillPolygon(ktk_kunci_chest,4,putih_tulang);
 
+
+
+//Objek Chest 2
 Point2D_t  ktk_bwh_chest2 [] = {{500.,80.},{660.,80.},{660.,120.},{500.,120.}};
 drawPolygon(ktk_bwh_chest2,4,hitam,10);
 fillPolygon(ktk_bwh_chest2,4,coklat_cerah);
@@ -203,6 +215,9 @@ Point2D_t  ktk_kunci_chest2 [] = {{570.,102.},{586.,102.},{586.,140.},{570.,140.
 drawPolygon(ktk_kunci_chest2,4,hitam,10);
 fillPolygon(ktk_kunci_chest2,4,putih_tulang);
 
+
+
+//Objek Jendela
 Point2D_t  ktk_jendela [4] = {{660.,280.},{780.,280.},{780.,400.},{660.,400.}};
 drawPolygon(ktk_jendela,4,hitam,10);
 fillPolygon(ktk_jendela,4,putih_tulang);
@@ -216,22 +231,24 @@ drawPolyline(gris_jendela2,2,biru_muda,5);
 drawPolyline(gris_jendela3,2,biru_muda,5);
 drawPolyline(gris_jendela4,2,biru_muda,5);
 
-Point2D_t  ktk_kki_kasur1 [4] = {{680.,0.},{692.,0.},{692.,100.},{680.,100.}};
-drawPolygon(ktk_kki_kasur1,4,hitam,10);
-fillPolygon(ktk_kki_kasur1,4,coklat_cerah);
 
+
+//Objek Kasur
 Point2D_t  ktk_kki_kasur2 [4] = {{688.,0.},{704.,0.},{704.,100.},{688.,100.}};
 drawPolygon(ktk_kki_kasur2,4,hitam,10);
 fillPolygon(ktk_kki_kasur2,4,coklat_gelap);
 
-Point2D_t  ktk_kki_kasur3 [] = {{904.,0.},{916.,0.},{904.,100.},{916.,100.}};
+Point2D_t  ktk_kki_kasur1 [4] = {{680.,0.},{692.,0.},{692.,100.},{680.,100.}};
+drawPolygon(ktk_kki_kasur1,4,hitam,10);
+fillPolygon(ktk_kki_kasur1,4,coklat_cerah);
+
+Point2D_t  ktk_kki_kasur3 [] = {{900.,0.},{912.,0.},{912.,100.},{900.,100.}};
 drawPolygon(ktk_kki_kasur3,4,hitam,10);
-fillPolygon(ktk_kki_kasur3,4,coklat_cerah);
+fillPolygon(ktk_kki_kasur3,4,coklat_gelap);
 
-Point2D_t  ktk_kki_kasur4 [] = {{908.,0.},{920.,0.},{908.,100.},{920.,100.}};
+Point2D_t  ktk_kki_kasur4 [] = {{908.,0.},{916.,0.},{916.,100.},{908.,100.}};
 drawPolygon(ktk_kki_kasur4,4,hitam,10);
-fillPolygon(ktk_kki_kasur4,4,coklat_gelap);
-
+fillPolygon(ktk_kki_kasur4,4,coklat_cerah);
 
 Point2D_t  ktk_kasur_mrh [4] = {{680.,100.},{840.,100.},{840.,130.},{680.,130.}};
 drawPolygon(ktk_kasur_mrh,4,hitam,10);
@@ -247,7 +264,25 @@ fillPolygon(ktk_kasur_putih,4,putih);
 
 
 
+//Object Furnace
+Point2D_t  ktk_ats_furnace [4] = {{360.,50.},{460.,50.},{460.,100.},{360.,100.}};
+drawPolygon(ktk_ats_furnace,4,hitam,10);
+fillPolygon(ktk_ats_furnace,4,abu_muda);
 
+Point2D_t  ktk_bwh_furnace [4] = {{360.,0.},{460.,0.},{460.,50.},{360.,50.}};
+drawPolygon(ktk_bwh_furnace,4,hitam,10);
+fillPolygon(ktk_bwh_furnace,4,abu_tua);
+
+Point2D_t  stglkr1_furnace [1] = {{410.,52.}};
+Point2D_t st_lkr[180];
+drawCircle(stglkr1_furnace[0],20,180,5,st_lkr);
+drawPolygon(st_lkr,180,hitam,5);
+fillPolygon(st_lkr,180,hitam);
+
+Point2D_t  stglkr2_furnace [1] = {{410.,2.}};
+drawCircle(stglkr2_furnace[0],20,180,5,st_lkr);
+drawPolygon(st_lkr,180,hitam,5);
+fillPolygon(st_lkr,180,merah_menyala);
 }
 void display() {
     glClear(GL_COLOR_BUFFER_BIT);
