@@ -28,8 +28,7 @@ void drawPolyline(Point2D_t pnt[], int n,
     glEnd();
 }
 
-void drawPolygon(Point2D_t pnt[], int n,
-    Color_t warna, float size)
+void drawPolygon(Point2D_t pnt[], int n,Color_t warna, float size)
 {
     setColor(warna);
     glLineWidth(size);
@@ -40,8 +39,7 @@ void drawPolygon(Point2D_t pnt[], int n,
     glEnd();
 }
 
-void fillPolygon(Point2D_t pnt[], int n,
-    Color_t warna)
+void fillPolygon(Point2D_t pnt[], int n,Color_t warna)
 {
     setColor(warna);
     glBegin(GL_POLYGON);
