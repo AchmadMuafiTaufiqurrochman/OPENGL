@@ -92,6 +92,112 @@ void drawEllipse(Point2D_t pusat, float jariH, float jariV, int sudut, float siz
     }
 }
 
+void Translasi(Point2D_t t_objek[], Point2D_t objek[], int n, float dx, float dy, float tick)
+{
+    static float transX = 0., transY = 0.;
+    float ddx, ddy, batasX, batasY, gerakX, gerakY;
+    int aba, kika;
+    for (int i = 0; i < n; i++)
+    {
+        t_objek[i].x = objek[i].x + transX;
+        t_objek[i].y = objek[i].y + transY;
+    }
+    if (dx == 0.)
+    {
+        ddx = 0.;
+        ddy = tick;
+    }
+    else if (dy == 0.)
+    {
+        ddx = tick;
+        ddy = 0.;
+    }
+
+    else if ((abs(dx) < abs(dy)) && (dx != 0.))
+    {
+        ddx = tick;
+        ddy = (abs(dy) / abs(dx)) * tick;
+    }
+    else if ((abs(dy) < abs(dx)) && (dy != 0.))
+    {
+        ddy = tick;
+        ddx = (abs(dx) / abs(dy)) * tick;
+    }
+    if (dx < 0.)
+    {
+        ddx = -ddx;
+        kika = -1;
+    }
+    else if
+        (dx > 0.) kika = 1;
+    else kika = 0;
+    if (dy < 0.)
+    {
+        ddy = -ddy;
+        aba = -1;
+    }
+    else if (dy > 0.) aba = 1;
+    else aba = 0;
+    batasX = objek[0].x + dx;
+    batasY = objek[0].y + dy;
+    gerakX = objek[0].x + transX;
+    gerakY = objek[0].y + transY;
+
+    if (tick == 0.)
+    {
+        transX = dx;
+        transY = dy;
+    }
+    else
+    {
+        if ((gerakX > batasX) && (gerakY > batasY) && (kika == -1) && (aba == -1)) // kiri-bawah
+        {
+            transX += ddx;
+            transY += ddy;
+        }
+        else if ((gerakX > batasX) && (gerakY < batasY) && (kika == -1) && (aba == 1)) // kiri-atas
+        {
+            transX += ddx;
+            transY += ddy;
+        }
+        else if ((gerakX < batasX) && (gerakY < batasY) && (kika == 1) && (aba == 1)) // kanan-atas
+        {
+            transX += ddx;
+            transY += ddy;
+        }
+        else if ((gerakX < batasX) && (gerakY > batasY) && (kika == 1) && (aba == -1)) // kanan-bawah
+        {
+            transX += ddx;
+            transY += ddy;
+        }
+        else if ((gerakX == batasX) && (gerakY > batasY) && (kika == 0) && (aba == -1)) // bawah
+        {
+            transX = 0.;
+            transY += ddy;
+        }
+        else if ((gerakX == batasX) && (gerakY < batasY) && (kika == 0) && (aba == 1)) // atas
+        {
+            transX = 0.;
+            transY += ddy;
+        }
+        else if ((gerakX > batasX) && (gerakY == batasY) && (kika == -1) && (aba == 0)) // kiri
+        {
+            transX += ddx;
+            transY = 0.;
+        }
+        else if ((gerakX < batasX) && (gerakY == batasY) && (kika == 1) && (aba == 0)) // kanan
+        {
+            transX += ddx;
+            transY = 0.;
+        }
+        else
+        {
+            transX = 0.;
+            transY = 0.;
+        }
+    }
+}
+
 void userdraw()
 {
 //isinya pallet warna
