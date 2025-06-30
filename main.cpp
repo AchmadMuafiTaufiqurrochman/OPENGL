@@ -108,6 +108,35 @@ Color_t coklat_gelap_bgt = {0.30000000000000004,0.30000000000000004,0};
 Color_t api_cerah = {1,1,0.7000000000000001};
 Color_t api_menyala = {1,0.8,0.2};
 Color_t merah_menyala = {1,0,0};
+Color_t background_COOKLAAT = {1,0.7,0};
+Color_t warna_grid_kayu = {0.7,0.4,0};
+
+Point2D_t  garis_1 [2] = {{0.,600.},{920.,600.}};
+Point2D_t  garis_2 [2] = {{0.,480.},{920.,480.}};
+Point2D_t  garis_3 [2] = {{0.,360.},{920.,360.}};
+Point2D_t  garis_4 [2] = {{0.,240.},{920.,240.}};
+Point2D_t  garis_5 [2] = {{0.,120.},{920.,120.}};
+Point2D_t  garis_6 [2] = {{0.,0.},{0.,920.}};
+Point2D_t  garis_7 [2] = {{120.,0.},{120.,720.}};
+Point2D_t  garis_8 [2] = {{240.,0.},{240.,720.}};
+Point2D_t  garis_9 [2] = {{360.,0.},{360.,720.}};
+Point2D_t  garis_10 [2] = {{480.,0.},{480.,720.}};
+Point2D_t  garis_11 [2] = {{600.,0.},{600.,720.}};
+Point2D_t  garis_12 [2] = {{720.,0.},{720.,720.}};
+Point2D_t  garis_13 [2] = {{840.,0.},{840.,720.}};
+drawPolyline(garis_1,2,warna_grid_kayu,3);
+drawPolyline(garis_2,2,warna_grid_kayu,3);
+drawPolyline(garis_3,2,warna_grid_kayu,3);
+drawPolyline(garis_4,2,warna_grid_kayu,3);
+drawPolyline(garis_5,2,warna_grid_kayu,3);
+drawPolyline(garis_6,2,warna_grid_kayu,3);
+drawPolyline(garis_7,2,warna_grid_kayu,3);
+drawPolyline(garis_8,2,warna_grid_kayu,3);
+drawPolyline(garis_9,2,warna_grid_kayu,3);
+drawPolyline(garis_10,2,warna_grid_kayu,3);
+drawPolyline(garis_11,2,warna_grid_kayu,3);
+drawPolyline(garis_12,2,warna_grid_kayu,3);
+drawPolyline(garis_13,2,warna_grid_kayu,3);
 
 
 // Objek pintu
@@ -298,7 +327,7 @@ int main(int argc, char **argv) {
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
     glutInitWindowSize(920, 720);
     glutCreateWindow("Lingkaran Merah & Kotak Biru Hitam Outline");
-    glClearColor(1.0, 1.0, 1.0, 0.0);
+    glClearColor(1.0, 0.7, 0.0, 0.0);
     gluOrtho2D(0.0, 920.0, 0.0, 720.0); 
     glutDisplayFunc(display);
     glutIdleFunc(display); 
