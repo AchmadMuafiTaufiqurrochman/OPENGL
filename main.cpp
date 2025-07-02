@@ -198,51 +198,53 @@ void Translasi(Point2D_t t_objek[], Point2D_t objek[], int n, float dx, float dy
     }
 }
 
+static float time = 0.0f; // variabel waktu global untuk animasi
+
 void userdraw()
 {
-//isinya pallet warna
-Color_t abu_muda = {0.5,0.5,0.5};
-Color_t abu_tua = {0.30000000000000004,0.30000000000000004,0.30000000000000004};
-Color_t oranye_menyala = {1,0.1,0};
-Color_t putih = {0.9,0.9,0.9};
-Color_t biru_muda = {0.30000000000000004,0.6000000000000001,0.8};
-Color_t putih_tulang = {0.9,0.9,0.8};
-Color_t hitam = {0,0,0};
-Color_t coklat_cerah = {0.8,0.5,0};
-Color_t coklat_gelap = {0.7000000000000001,0.4,0};
-Color_t coklat_gelap_bgt = {0.30000000000000004,0.30000000000000004,0};
-Color_t api_cerah = {1,1,0.7000000000000001};
-Color_t api_menyala = {1,0.8,0.2};
-Color_t merah_menyala = {1,0,0};
-Color_t background_COOKLAAT = {1,0.7,0};
-Color_t warna_grid_kayu = {0.7,0.4,0};
+    //isinya pallet warna
+    Color_t abu_muda = {0.5,0.5,0.5};
+    Color_t abu_tua = {0.30000000000000004,0.30000000000000004,0.30000000000000004};
+    Color_t oranye_menyala = {1,0.1,0};
+    Color_t putih = {0.9,0.9,0.9};
+    Color_t biru_muda = {0.30000000000000004,0.6000000000000001,0.8};
+    Color_t putih_tulang = {0.9,0.9,0.8};
+    Color_t hitam = {0,0,0};
+    Color_t coklat_cerah = {0.8,0.5,0};
+    Color_t coklat_gelap = {0.7000000000000001,0.4,0};
+    Color_t coklat_gelap_bgt = {0.30000000000000004,0.30000000000000004,0};
+    Color_t api_cerah = {1,1,0.7000000000000001};
+    Color_t api_menyala = {1,0.8,0.2};
+    Color_t merah_menyala = {1,0,0};
+    Color_t background_COOKLAAT = {1,0.7,0};
+    Color_t warna_grid_kayu = {0.7,0.4,0};
 
-Point2D_t  garis_1 [2] = {{0.,600.},{920.,600.}};
-Point2D_t  garis_2 [2] = {{0.,480.},{920.,480.}};
-Point2D_t  garis_3 [2] = {{0.,360.},{920.,360.}};
-Point2D_t  garis_4 [2] = {{0.,240.},{920.,240.}};
-Point2D_t  garis_5 [2] = {{0.,120.},{920.,120.}};
-Point2D_t  garis_6 [2] = {{0.,0.},{0.,920.}};
-Point2D_t  garis_7 [2] = {{120.,0.},{120.,720.}};
-Point2D_t  garis_8 [2] = {{240.,0.},{240.,720.}};
-Point2D_t  garis_9 [2] = {{360.,0.},{360.,720.}};
-Point2D_t  garis_10 [2] = {{480.,0.},{480.,720.}};
-Point2D_t  garis_11 [2] = {{600.,0.},{600.,720.}};
-Point2D_t  garis_12 [2] = {{720.,0.},{720.,720.}};
-Point2D_t  garis_13 [2] = {{840.,0.},{840.,720.}};
-drawPolyline(garis_1,2,warna_grid_kayu,3);
-drawPolyline(garis_2,2,warna_grid_kayu,3);
-drawPolyline(garis_3,2,warna_grid_kayu,3);
-drawPolyline(garis_4,2,warna_grid_kayu,3);
-drawPolyline(garis_5,2,warna_grid_kayu,3);
-drawPolyline(garis_6,2,warna_grid_kayu,3);
-drawPolyline(garis_7,2,warna_grid_kayu,3);
-drawPolyline(garis_8,2,warna_grid_kayu,3);
-drawPolyline(garis_9,2,warna_grid_kayu,3);
-drawPolyline(garis_10,2,warna_grid_kayu,3);
-drawPolyline(garis_11,2,warna_grid_kayu,3);
-drawPolyline(garis_12,2,warna_grid_kayu,3);
-drawPolyline(garis_13,2,warna_grid_kayu,3);
+    Point2D_t  garis_1 [2] = {{0.,600.},{920.,600.}};
+    Point2D_t  garis_2 [2] = {{0.,480.},{920.,480.}};
+    Point2D_t  garis_3 [2] = {{0.,360.},{920.,360.}};
+    Point2D_t  garis_4 [2] = {{0.,240.},{920.,240.}};
+    Point2D_t  garis_5 [2] = {{0.,120.},{920.,120.}};
+    Point2D_t  garis_6 [2] = {{0.,0.},{0.,920.}};
+    Point2D_t  garis_7 [2] = {{120.,0.},{120.,720.}};
+    Point2D_t  garis_8 [2] = {{240.,0.},{240.,720.}};
+    Point2D_t  garis_9 [2] = {{360.,0.},{360.,720.}};
+    Point2D_t  garis_10 [2] = {{480.,0.},{480.,720.}};
+    Point2D_t  garis_11 [2] = {{600.,0.},{600.,720.}};
+    Point2D_t  garis_12 [2] = {{720.,0.},{720.,720.}};
+    Point2D_t  garis_13 [2] = {{840.,0.},{840.,720.}};
+    drawPolyline(garis_1,2,warna_grid_kayu,3);
+    drawPolyline(garis_2,2,warna_grid_kayu,3);
+    drawPolyline(garis_3,2,warna_grid_kayu,3);
+    drawPolyline(garis_4,2,warna_grid_kayu,3);
+    drawPolyline(garis_5,2,warna_grid_kayu,3);
+    drawPolyline(garis_6,2,warna_grid_kayu,3);
+    drawPolyline(garis_7,2,warna_grid_kayu,3);
+    drawPolyline(garis_8,2,warna_grid_kayu,3);
+    drawPolyline(garis_9,2,warna_grid_kayu,3);
+    drawPolyline(garis_10,2,warna_grid_kayu,3);
+    drawPolyline(garis_11,2,warna_grid_kayu,3);
+    drawPolyline(garis_12,2,warna_grid_kayu,3);
+    drawPolyline(garis_13,2,warna_grid_kayu,3);
 
 
 // Objek pintu
@@ -418,6 +420,91 @@ Point2D_t  stglkr2_furnace [1] = {{410.,2.}};
 drawCircle(stglkr2_furnace[0],20,180,5,st_lkr);
 drawPolygon(st_lkr,180,hitam,5);
 fillPolygon(st_lkr,180,merah_menyala);
+
+    // --- Sparks Animation di atas Obor ---
+    #define N_SPARKS_OBOR 16
+    static Point2D_t sparks_obor[N_SPARKS_OBOR] = {
+        // Obor 1 (sekitar x=250, y=300)
+        {250, 300}, {252, 300}, {254, 300}, {256, 300}, {258, 300}, {260, 300}, {262, 300}, {264, 300},
+        // Obor 2 (sekitar x=310, y=300)
+        {310, 300}, {312, 300}, {314, 300}, {316, 300}, {318, 300}, {320, 300}, {322, 300}, {324, 300}
+    };
+    static float sparks_obor_dx[N_SPARKS_OBOR] = {
+        0, 1, -1, 0.5, -0.5, 1.2, -1.2, 0.8,
+        0, 1, -1, 0.5, -0.5, 1.2, -1.2, 0.8
+    };
+    static float sparks_obor_dy[N_SPARKS_OBOR] = {
+        40, 42, 38, 45, 35, 43, 37, 41,
+        40, 42, 38, 45, 35, 43, 37, 41
+    };
+    static Point2D_t sparks_obor_translated[N_SPARKS_OBOR];
+
+    // Update time
+    time += 0.02f;
+    if (time > 2.0f) time = 0.0f; // reset animasi setiap 2 detik
+
+    for (int i = 0; i < N_SPARKS_OBOR; i++) {
+        float progress = time / 2.0f; // 0..1
+        float dx = sparks_obor_dx[i] * progress;
+        float dy = sparks_obor_dy[i] * progress;
+        Point2D_t start = sparks_obor[i];
+        Point2D_t temp[1];
+        Translasi(temp, &start, 1, dx, dy, 0.0f);
+        sparks_obor_translated[i] = temp[0];
+    }
+
+    Color_t warna_spark_obor = {1, 0.8, 0.2}; // kuning-oranye
+    glPointSize(6.0);
+    setColor(warna_spark_obor);
+    glBegin(GL_POINTS);
+    for (int i = 0; i < N_SPARKS_OBOR; i++) {
+        glVertex2f(sparks_obor_translated[i].x, sparks_obor_translated[i].y);
+    }
+    glEnd();
+
+    // --- Sparks Animation di atas Furnace ---
+    #define N_SPARKS_FURNACE 20
+    static Point2D_t sparks_furnace[N_SPARKS_FURNACE];
+    static float sparks_furnace_dx[N_SPARKS_FURNACE];
+    static float sparks_furnace_dy[N_SPARKS_FURNACE];
+
+    // Furnace center (lihat lingkaran merah: pusat di {410,2}, radius 20)
+    float fx = 410.0f, fy = 22.0f; // sedikit di atas lingkaran merah
+    float radius = 10.0f; // sebaran horizontal awal
+    float max_dy = 80.0f; // tinggi percikan lebih besar dari obor
+
+    // Inisialisasi posisi dan arah sparks furnace (sekali saja)
+    static bool furnace_init = false;
+    if (!furnace_init) {
+        for (int i = 0; i < N_SPARKS_FURNACE; i++) {
+            float angle = (2 * M_PI * i) / N_SPARKS_FURNACE;
+            sparks_furnace[i].x = fx + radius * cos(angle);
+            sparks_furnace[i].y = fy + radius * sin(angle);
+            sparks_furnace_dx[i] = 20.0f * cos(angle); // percikan menyebar ke samping
+            sparks_furnace_dy[i] = max_dy + 10.0f * sin(angle); // tinggi bervariasi
+        }
+        furnace_init = true;
+    }
+
+    static Point2D_t sparks_furnace_translated[N_SPARKS_FURNACE];
+    for (int i = 0; i < N_SPARKS_FURNACE; i++) {
+        float progress = time / 2.0f; // 0..1
+        float dx = sparks_furnace_dx[i] * progress;
+        float dy = sparks_furnace_dy[i] * progress;
+        Point2D_t start = sparks_furnace[i];
+        Point2D_t temp[1];
+        Translasi(temp, &start, 1, dx, dy, 0.0f);
+        sparks_furnace_translated[i] = temp[0];
+    }
+
+    Color_t warna_spark_furnace = {0.8, 0.8, 0.8}; // oranye terang
+    glPointSize(12.0); // lebih besar dari obor
+    setColor(warna_spark_furnace);
+    glBegin(GL_POINTS);
+    for (int i = 0; i < N_SPARKS_FURNACE; i++) {
+        glVertex2f(sparks_furnace_translated[i].x, sparks_furnace_translated[i].y);
+    }
+    glEnd();
 }
 
 //fungsi untuk menampilkan
